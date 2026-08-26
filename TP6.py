@@ -1,102 +1,35 @@
-# # a) Llevar un registro de todos los datos de alumnos de la escuela (Nombre,
-# # Apellido, fecha de nacimiento, DNI, Nombre de Tutor, registro de todas las
-# # notas, cantidad de faltas, cantidad de amonestaciones recibidas.
-# # Recomendación: Para llevar un registro de estos dato se puede
-# # utilizar un diccionario estructurado de la siguiente manera:
+def alumno_nuevo():
+        nombre = input('Ingrese Nombre: ')
+        apellido = input('Ingrese Apellido: ')
+        fecnac = input('Ingrese Fecha de Nacimiento: ')
+        dni = int(input('Ingrese Dni: '))
+        nomTut = input('Ingrese Nombre del Tutor: ')
+        notas = input('Ingrese Notas: ')
+        faltas = int(input('Ingrese Faltas: '))
+        amonestac = int(input('Ingrese Amonestaciones: '))
 
-# # Donde cada alumno es otro diccionario estructurado de la
-# # siguiente forma:
+        variable= {
+                'Nombre': nombre,
+                'Apellido': apellido,
+                'DNI' : dni,
+                'Fec_nac': fecnac,
+                'Tutor' : nomTut,
+                'Notas' : notas,
+                'Faltas' : faltas,
+                'Amonestaciones' : amonestac
+                }
 
-alumno1= {
-        'Nombre': 'Ariel',
-        'Apellido' : 'Bonadeo',
-        'DNI' : 31081087,
-        'Fec_nac': '24/07/1984',
-        'Tutor' : 'Mama',
-        'Notas' : [8,8,7,8]
-        }
-alumno2= {
-        'Nombre': 'juan',
-        'Apellido' : 'perez',
-        'DNI' : 30123456,
-        'Fec_nac': '1/07/1984',
-        'Tutor' : 'Papa',
-        'Notas' : [4,3,6,8]
-        }
-alumno3= {
-        'Nombre': 'jose',
-        'Apellido' : 'diaz',
-        'DNI' : 30987654,
-        'Fec_nac': '2/07/1984',
-        'Tutor' : 'Tia',
-        'Notas' : [2,5,6,4]
-        }
+        return variable
 
-# # En esta estructura:
 
-Datos = { 'Alumnos' : [alumno1,alumno2,alumno3 ]}
+Datos = { 'Alumnos' : []}
 
-# Para acceder por ejemplo al numero de DNI del tercer alumno
-# Datos['Alumnos'][2]['DNI']
+do  = int(input('Ingrese 1 agregar alumno - 2 modificar datos - 3 expulsar alumno - 4 mostrar alumnos - 0 para salir '))
 
-# print(Datos['Alumnos'][2]['DNI'])
-      
-# # b) Mostrar los datos de cada alumno
-print('alumno1: ')
-print(Datos['Alumnos'][0])
-
-print('alumno2: ')
-print(Datos['Alumnos'][1])
-
-print('alumno3: ')
-print(Datos['Alumnos'][2])
-
-# # c) Modificar los datos de los alumnos
-
-Datos['Alumnos'][1]['Tutor'] = 'Madre y Padre'
-
-print('alumno2: ')
-print(Datos['Alumnos'][1])
-
-Datos['Alumnos'][2]['Notas'] = [4,3,7,8]
-
-print('alumno3: ')
-print(Datos['Alumnos'][2])
-
-# # d) Agregar alumnos
-
-alumno4= {
-            'Nombre': 'maria',
-            'Apellido' : 'magdalena',
-            'DNI' : 100000000,
-            'Fec_nac': '01/01/1900',
-            'Tutor' : 'dios',
-            'Notas' : [10]
-            }
-Datos['Alumnos'].append(alumno4)
-
-alumno5= {
-            'Nombre': 'ana',
-            'Apellido' : 'bolena',
-            'DNI' : 200000000,
-            'Fec_nac': '01/01/1700',
-            'Tutor' : 'mama',
-            'Notas' : [10,9,8,7]
-            }
-Datos['Alumnos'].append(alumno5)
-
-print(Datos['Alumnos'])
-
-# # e) Expulsar alumnos
-
-dni = int(input('Ingrese Dni para explusar: '))
-cont=0
-for i in Datos['Alumnos']:
-    # print(Datos['Alumnos'][cont]['DNI'])
-    # cont = cont+1
-    if Datos['Alumnos'][cont]['DNI'] == dni :
-        # print(Datos['Alumnos'][cont])
-        Datos['Alumnos'][cont].pop
-    cont = cont+1
-
-print(Datos['Alumnos'])
+while do != 0:
+    if do ==1:
+        Datos['Alumnos'].append(alumno_nuevo())
+        do  = int(input('Ingrese 1 agregar alumno - 2 modificar datos - 3 expulsar alumno - 4 mostrar alumnos - 0 para salir '))
+    elif do ==4:
+        print(Datos['Alumnos'])
+        break
