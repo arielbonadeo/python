@@ -1,11 +1,35 @@
-1) Hacer un programa que gestiones datos para una escuela. El programa tiene que ser capaz
-de:
-a) Llevar un registro de todos los datos de alumnos de la escuela (Nombre, Apellido,
-fecha de nacimiento, DNI, Nombre de Tutor, registro de todas las notas, cantidad de
-faltas, cantidad de amonestaciones recibidas.
-b) Mostrar los datos de cada alumno
-c) Modificar los datos de los alumnos
-d) Agregar alumnos
-e) Expulsar alumnos
-f) Dar Persistencia a los Datos del programa mediante la implementación Archivos
-El trabajo practico se deberá subir a un repositorio de GitHu
+def alumno_nuevo():
+        nombre = input('Ingrese Nombre: ')
+        apellido = input('Ingrese Apellido: ')
+        fecnac = input('Ingrese Fecha de Nacimiento: ')
+        dni = int(input('Ingrese Dni: '))
+        nomTut = input('Ingrese Nombre del Tutor: ')
+        notas = input('Ingrese Notas: ')
+        faltas = int(input('Ingrese Faltas: '))
+        amonestac = int(input('Ingrese Amonestaciones: '))
+
+        variable= {
+                'Nombre': nombre,
+                'Apellido': apellido,
+                'DNI' : dni,
+                'Fec_nac': fecnac,
+                'Tutor' : nomTut,
+                'Notas' : notas,
+                'Faltas' : faltas,
+                'Amonestaciones' : amonestac
+                }
+
+        return variable
+
+
+Datos = { 'Alumnos' : []}
+
+do  = int(input('Ingrese 1 agregar alumno - 2 modificar datos - 3 expulsar alumno - 4 mostrar alumnos - 0 para salir '))
+
+while do != 0:
+    if do ==1:
+        Datos['Alumnos'].append(alumno_nuevo())
+        do  = int(input('Ingrese 1 agregar alumno - 2 modificar datos - 3 expulsar alumno - 4 mostrar alumnos - 0 para salir '))
+    elif do ==4:
+        print(Datos['Alumnos'])
+        break
