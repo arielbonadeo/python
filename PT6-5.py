@@ -28,8 +28,53 @@ do  = int(input('Ingrese 1 agregar alumno - 2 modificar datos - 3 expulsar alumn
 
 while do != 0:
     if do ==1:
+        print('1') 
         Datos['Alumnos'].append(alumno_nuevo())
         do  = int(input('Ingrese 1 agregar alumno - 2 modificar datos - 3 expulsar alumno - 4 mostrar alumnos - 0 para salir '))
+    elif do ==2:
+        print('2')
+        d = int(input('Ingrese DNI del alumno a Mofificar: '))
+        cont=0
+        for i in Datos['Alumnos']:
+                if Datos['Alumnos'][cont]['DNI'] == d :
+                        a = int(input('Que dato desea Mofdificar? ' \
+                        '1-Nombre 2-Apellido 3-Fecha Nacimiento 4-Tutor 5-Notas 6-Faltas 7-Amonestaciones '))
+                        if a ==1:
+                              b = input('Nombre: ')
+                              Datos['Alumnos'][cont]['Nombre'] = b
+                              do=0
+                        elif a ==2:  
+                                b = input('Apellido: ') 
+                                Datos['Alumnos'][cont]['Apellido: '] = b
+                                do=0
+                        elif a ==3:
+                                b = input('Fecha Nacimiento: ')
+                                Datos['Alumnos'][cont]['Fec_nac: '] = b
+                                do=0
+                        elif a ==4:
+                                b = input('Tutor: ')
+                                Datos['Alumnos'][cont]['Tutor: '] = b
+                                do=0
+                        elif a ==5:
+                                b = input('Notas')
+                                Datos['Alumnos'][cont]['Notas: '] = b
+                                do=0
+                        elif a ==6:
+                                b = int(input('Faltas: '))
+                                Datos['Alumnos'][cont]['Faltas'] = b
+                                do=0
+                        elif a ==7:
+                                b = int(input('Amonestaciones: '))
+                                Datos['Alumnos'][cont]['Amonestaciones'] = b
+                                do=0
+
+                        print(Datos['Alumnos'][cont])
+                        
+        cont = cont+1
+
+    elif do ==3:
+        print('3')
+
     elif do ==4:
         print(Datos['Alumnos'])
         break
