@@ -32,7 +32,6 @@ while do != 0:
         Datos['Alumnos'].append(alumno_nuevo())
         do  = int(input('Ingrese 1 agregar alumno - 2 modificar datos - 3 expulsar alumno - 4 mostrar alumnos - 0 para salir '))
     elif do ==2:
-        print('2')
         d = int(input('Ingrese DNI del alumno a Mofificar: '))
         cont=0
         for i in Datos['Alumnos']:
@@ -73,8 +72,15 @@ while do != 0:
         cont = cont+1
 
     elif do ==3:
-        print('3')
-
+        co=0
+        m = int(input('Ingrese DNI del alumno a Expulsar: '))
+        for j in Datos['Alumnos']:
+                print(Datos['Alumnos'][co]['DNI'])
+                if Datos['Alumnos'][co]['DNI'] == m:
+                        del Datos['Alumnos'][co]
+                        print(Datos['Alumnos'])  
+                        do =0            
+                co = co+1
     elif do ==4:
         print(Datos['Alumnos'])
-        break
+        
