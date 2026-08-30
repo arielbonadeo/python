@@ -83,4 +83,11 @@ while do != 0:
                 co = co+1
     elif do ==4:
         print(Datos['Alumnos'])
+
+
+archivo = open("/Users/arielbonadeo/Documents/fichero.txt","w")
+# el comando open("fichero.txt","w") metiendolos en una carpeta junto con Final.py no me guarda nada
+guardar = str(Datos['Alumnos'])
+archivo.write(guardar)
+archivo.close
         
